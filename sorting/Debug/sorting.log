@@ -1,16 +1,15 @@
-﻿Build started 20/03/2016 14:47:15.
+﻿Build started 20/03/2016 23:02:48.
      1>Project "C:\Users\JS\FH\SS2016\PPRG\pprg.sorting\sorting\sorting.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\sorting.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         C:\Program Files (x86)\IntelSWTools\compilers_and_libraries_2016\windows\bin\intel64\icl.exe /c /Qm32 /ZI /nologo /W3 /Od /Qftz- /D __INTEL_COMPILER=1600 /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\sorting.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP stdafx.cpp
          stdafx.cpp
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\sorting.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt sorting.cpp
+         C:\Program Files (x86)\IntelSWTools\compilers_and_libraries_2016\windows\bin\intel64\icl.exe /c /Qm32 /ZI /nologo /W3 /Od /Qftz- /D __INTEL_COMPILER=1600 /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\sorting.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP sorting.cpp
          sorting.cpp
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\JS\FH\SS2016\PPRG\pprg.sorting\Debug\sorting.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\JS\FH\SS2016\PPRG\pprg.sorting\Debug\sorting.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\JS\FH\SS2016\PPRG\pprg.sorting\Debug\sorting.lib" /MACHINE:X86 Debug\sorting.obj
+         C:\Program Files (x86)\IntelSWTools\compilers_and_libraries_2016\windows\bin\intel64\xilink.exe -qm32 /OUT:"C:\Users\JS\FH\SS2016\PPRG\pprg.sorting\Debug\sorting.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /manifest:embed /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\JS\FH\SS2016\PPRG\pprg.sorting\Debug\sorting.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\JS\FH\SS2016\PPRG\pprg.sorting\Debug\sorting.lib" /MACHINE:X86 Debug\sorting.obj
          Debug\stdafx.obj
-         sorting.vcxproj -> C:\Users\JS\FH\SS2016\PPRG\pprg.sorting\Debug\sorting.exe
      1>Done Building Project "C:\Users\JS\FH\SS2016\PPRG\pprg.sorting\sorting\sorting.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.19
+Time Elapsed 00:00:01.32
