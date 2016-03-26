@@ -11,8 +11,9 @@
 #include <math.h>
 
 int thresholdM = 0;
+unsigned short *output;
 
-void merge(unsigned short *list, int start, int mid, int end)
+void merge2(unsigned short *list, int start, int mid, int end)
 {
 	int lengthLeft = mid - start + 1;
 	int lengthRight = end - mid;
@@ -46,6 +47,27 @@ void merge(unsigned short *list, int start, int mid, int end)
 	delete[] rightArray;
 }
 
+void merge(unsigned short *list, int start, int mid, int end)
+{
+	int i = start;
+	int j = mid;
+
+	//std::cout << "start: " << start << ", mid: " << mid << ", end: " << end << std::endl;
+
+	for (int k = start; k < end; k++) {
+		//std::cout << "left: " << list[i] << ", right: " << list[j] << std::endl;
+		if (i < mid && (j >= end || list[i] <= list[j])) {
+			output[k] = list[i];
+			i = i + 1;
+		}
+		else {
+			output[k] = list[j];
+			j = j + 1;
+		}
+		//std::cout << "index: " << k << ", value: " << output[k] << std::endl;
+	}
+}
+
 void mergeSortSerial(unsigned short *list, int start, int end)
 {
 	if (start < end)
@@ -55,7 +77,8 @@ void mergeSortSerial(unsigned short *list, int start, int end)
 		mergeSortSerial(list, start, mid);
 		mergeSortSerial(list, mid + 1, end);
 
-		merge(list, start, mid, end);
+		merge(list, start, mid + 1, end + 1);
+		list[start:end - start + 1] = output[start:end - start + 1];
 	}
 }
 
@@ -74,7 +97,8 @@ void mergeSortParallel(unsigned short *list, int start, int end)
 		mergeSortParallel(list, mid + 1, end);
 		cilk_sync;
 
-		merge(list, start, mid, end);
+		merge(list, start, mid + 1, end + 1);
+		list[start:end - start + 1] = output[start:end - start + 1];
 	}
 }
 
@@ -88,12 +112,13 @@ void doMergeSort(int t)
 	std::mt19937 engine;
 	auto generator = std::bind(distribution, engine);
 
-	int maxArraySize = pow(2, 23);
-	int powerOfTwo = 17;
+	int maxArraySize = pow(2, 26);
+	int powerOfTwo = 19;
 
-	for (int size = std::pow(2, 17); size <= maxArraySize; size *= 2)
+	for (int size = std::pow(2, powerOfTwo); size <= maxArraySize; size *= 2)
 	{
 		unsigned short *list = new unsigned short[size];
+		output = new unsigned short[size];
 		printf("Array size: 2^%d\n", powerOfTwo);
 
 		/*------ SERIAL QUICKSORT ------*/
@@ -105,7 +130,7 @@ void doMergeSort(int t)
 
 		std::cout << "SERIAL: Merge Sort: " << end - start << " milliseconds" << std::endl;
 
-		//verify(list, size);
+		verify(output, size);
 
 		/*------ PARALLEL QUICKSORT ------*/
 		std::generate_n(list, size, generator);
@@ -116,9 +141,10 @@ void doMergeSort(int t)
 
 		std::cout << "PARALLEL: Merge Sort: " << end - start << " milliseconds" << std::endl;
 
-		//verify(list, size);
+		verify(output, size);
 
 		delete[] list;
+		delete[] output;
 
 		printf("\n");
 		powerOfTwo++;

@@ -35,7 +35,6 @@ void quickSortParallel(unsigned short *beg, unsigned short *end) {
 
 void quickSortSerial(unsigned short *beg, unsigned short *end) {
 	if (beg < end) {
-		//std::cout << end-beg << std::endl;
 		end = end--;
 		unsigned short *pivot = std::partition(beg, end, std::bind2nd(std::less<unsigned short>(), *end));
 		std::swap(*end, *pivot);
@@ -58,7 +57,7 @@ void doQuickSort(int t) {
 	int maxArraySize = pow(2, 23);
 	int powerOfTwo = 17;
 
-	for (int size = std::pow(2, 17); size <= maxArraySize; size *= 2)
+	for (int size = std::pow(2, powerOfTwo); size <= maxArraySize; size *= 2)
 	{
 		unsigned short *list = new unsigned short[size];
 		printf("Array size: 2^%d\n", powerOfTwo);
@@ -72,7 +71,7 @@ void doQuickSort(int t) {
 
 		std::cout << "SERIAL: Quick Sort: " << end - start << " milliseconds" << std::endl;
 		
-		//verify(list, size);
+		verify(list, size);
 
 		/*------ PARALLEL QUICKSORT ------*/
 		std::generate_n(list, size, generator);
@@ -83,7 +82,7 @@ void doQuickSort(int t) {
 
 		std::cout << "PARALLEL: Quick Sort: " << end - start << " milliseconds" << std::endl;
 
-		//verify(list, size);
+		verify(list, size);
 
 		delete[] list;
 

@@ -1,4 +1,4 @@
-﻿Build started 21/03/2016 20:38:07.
+﻿Build started 26/03/2016 23:22:24.
      1>Project "C:\Users\JS\FH\SS2016\PPRG\pprg.sorting\sorting\sorting.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
          C:\Program Files (x86)\IntelSWTools\compilers_and_libraries_2016\windows\bin\intel64\icl.exe /c /Qm32 /ZI /nologo /W3 /Od /Qftz- /D __INTEL_COMPILER=1600 /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\sorting.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP stdafx.cpp
@@ -16,4 +16,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.18
+Time Elapsed 00:00:01.94

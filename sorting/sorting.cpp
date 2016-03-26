@@ -18,9 +18,9 @@ void verify(unsigned short *list, int size)
 {
 	for (int i = 1; i < size; i++)
 	{
-		if (list[i] <= list[i - 1])
+		if (list[i] < list[i - 1])
 		{
-			printf("FAILED");
+			std::cout << "FAILED" << std::endl;
 			break;
 		}
 	}
@@ -33,11 +33,7 @@ int main(int argc, char *argv[]) {
 	}
 
 	char* sort = argv[1];
-
 	int threshold = atoi(argv[2]);
-
-	//std::cout << "Enter threshold value: ";
-	//std::cin >> threshold;
 
 	if (strcmp(sort, "q") == 0)
 	{
@@ -47,7 +43,6 @@ int main(int argc, char *argv[]) {
 		doMergeSort(threshold);
 	}
 	
-	//std::cin >> n;
 	return 0;
 }
 
